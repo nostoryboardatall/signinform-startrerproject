@@ -37,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         let viewController = SignInController()
+        // create view controller as navigation controller
         window?.rootViewController = UINavigationController.init(rootViewController: viewController)
 
         return true
