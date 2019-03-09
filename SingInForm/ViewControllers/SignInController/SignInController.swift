@@ -39,6 +39,7 @@ class SignInController: UIViewController {
     }
     
     private func setupView() {
+        // remove navigation bar for that view controller
         navigationController?.setNavigationBarHidden(true, animated: false)
         view.backgroundColor = .background
     }
