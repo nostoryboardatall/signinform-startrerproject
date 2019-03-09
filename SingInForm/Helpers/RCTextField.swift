@@ -68,4 +68,18 @@ class RCTextField: UITextField {
         leftViewRect.origin.x += displacement
         return leftViewRect
     }
+
+    public func emailIsInvalid() -> Bool {
+        guard let _ = text else { return false }
+        
+        let format = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let predicate = NSPredicate(format:"SELF MATCHES %@", format)
+        
+        return !predicate.evaluate(with: text!)
+    }
+    
+    public func isEmpty() -> Bool {
+        guard let _ = text else { return false }
+        return text!.isEmpty
+    }
 }
